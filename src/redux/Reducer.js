@@ -14,8 +14,8 @@ export const Reducer = (state = initialState, action) => {
             return {...state, todolist: state.todolist.filter((el) => el.id !== action.id) }
         case DONE:
             return { ...state, todolist: state.todolist.map(el => el.id === action.id ? { ...el, isDone: !el.isDone } : el) }
-        case EDIT:
-            return {...state, todolist: [...state.todolist, action.payload]}
+        case EDIT: 
+            return { ...state, todolist: state.todolist.map(el => el.id === action.id ? {...el, description : action.description} : el )}
 
     default:
         return state

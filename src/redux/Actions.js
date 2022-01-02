@@ -1,7 +1,9 @@
 import { ADD_TASK, DELETE_TASK, DONE, EDIT } from "./Types"
 export const add_task = (x) => {
-    return {type: ADD_TASK,
-        payload : {description : x, isDone : false , id: Math.random()}}
+    return {
+        type: ADD_TASK,
+        payload: { description: x, isDone: false, id: Math.random() }
+    }
 }
 
 export const delete_task = (id) => {
@@ -17,10 +19,12 @@ export const done = (id) => {
         id
     }
 }
-
-export const edit = (x) => {
+export const edit_task = (x,id) => {
     return {
         type: EDIT,
-        x
+        description: x,
+        id
+        
+        
     }
 }
